@@ -1,0 +1,10 @@
+main: infinity.minecraft.Main
+name: TestPlugin
+version: 1.0
+author: ZoneInfinity
+
+commands:
+  hello:
+    description: Sends Greetings
+  heal:
+    description: Heals the Person
