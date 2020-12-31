@@ -10,12 +10,12 @@ import org.jetbrains.annotations.NotNull;
 public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
-        System.out.println("Test Plugin Enabled");
+        getLogger().info("Test Plugin Enabled");
     }
 
     @Override
     public void onDisable() {
-        System.out.println("Test Plugin Disabled");
+        getLogger().info("Test Plugin Disabled");
     }
 
     @Override

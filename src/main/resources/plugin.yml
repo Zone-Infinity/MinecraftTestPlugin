@@ -8,3 +8,8 @@ commands:
     description: Sends Greetings
   heal:
     description: Heals the Person
+  wild:
+    description: Teleports the player to random location
+  launch:
+    description: Launches you off the platform
+    aliases: lch

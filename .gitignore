@@ -1,5 +1,4 @@
-/.gitignore
+.gitignore
 /.idea/
 /target
-/Minecraft Tests.iml
 /MinecraftTests.iml
