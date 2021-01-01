@@ -1,9 +1,6 @@
 package infinity.minecraft.command;
 
-import infinity.minecraft.command.commands.HealCommand;
-import infinity.minecraft.command.commands.HelloCommand;
-import infinity.minecraft.command.commands.LaunchCommand;
-import infinity.minecraft.command.commands.WildCommand;
+import infinity.minecraft.command.commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +18,9 @@ public class CommandManager {
         addCommand(new HealCommand());
         addCommand(new WildCommand());
         addCommand(new LaunchCommand());
+        addCommand(new GodBootsCommand());
+        addCommand(new GodTridentCommand());
+        addCommand(new AirWalkerCommand());
     }
 
     private void addCommand(ICommand cmd) {
@@ -38,10 +38,7 @@ public class CommandManager {
         String searchLower = search.toLowerCase();
 
         for (ICommand cmd : this.commands) {
-            List<String> aliases = new ArrayList<>();
-            cmd.getAliases().forEach(it -> aliases.add(it.toLowerCase()));
-
-            if (cmd.getName().toLowerCase().equals(searchLower) || aliases.contains(searchLower)) {
+            if (cmd.getName().toLowerCase().equals(searchLower)) {
                 return cmd;
             }
         }

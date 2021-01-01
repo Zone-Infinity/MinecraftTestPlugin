@@ -7,8 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
 public class LaunchCommand implements ICommand {
     @Override
     public boolean handle(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -44,8 +42,4 @@ public class LaunchCommand implements ICommand {
         return "launch";
     }
 
-    @Override
-    public List<String> getAliases() {
-        return List.of("lch");
-    }
 }

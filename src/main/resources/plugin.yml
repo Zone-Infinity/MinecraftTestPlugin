@@ -2,6 +2,7 @@ main: infinity.minecraft.Main
 name: TestPlugin
 version: 1.0
 author: ZoneInfinity
+api-version: 1.16
 
 commands:
   hello:
@@ -12,4 +13,9 @@ commands:
     description: Teleports the player to random location
   launch:
     description: Launches you off the platform
-    aliases: lch
+  godboots:
+    description: Gives the player god boots
+  godtrident:
+    description: Gives the player god trident
+  airwalker:
+    description: Gives the player air walker
