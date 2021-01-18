@@ -1,4 +1,4 @@
-main: infinity.minecraft.Main
+main: me.infinity.minecraft.Main
 name: TestPlugin
 version: 1.0
 author: ZoneInfinity
@@ -17,5 +17,13 @@ commands:
     description: Gives the player god boots
   godtrident:
     description: Gives the player god trident
-  airwalker:
+  soulwalker:
     description: Gives the player air walker
+  adamapple:
+    description: Gives the player adam's apple
+  changeteam:
+    description: Changes your team
+  telepathy:
+    description: Use This
+  flyingbow:
+  switchball:

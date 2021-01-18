@@ -1,4 +1,4 @@
-package infinity.minecraft.events;
+package me.infinity.minecraft.events;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -6,10 +6,8 @@ import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -73,11 +71,11 @@ public class StarEvent implements Listener {
                     loc.setY(loc.getY() + 1);
 
                     for (int i = 1; i < 4; i++) {
-                        Objects.requireNonNull(loc.getWorld()).spawnEntity(loc, EntityType.DROWNED);
+                        Objects.requireNonNull(loc.getWorld()).spawnEntity(loc, EntityType.HUSK);
+                        player.getWorld().strikeLightning(loc);
                         loc.setX(loc.getX() + i);
                     }
                 }
-
             }
         }
     }

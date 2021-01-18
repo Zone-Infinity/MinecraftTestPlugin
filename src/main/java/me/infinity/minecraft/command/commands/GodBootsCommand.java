@@ -1,6 +1,6 @@
-package infinity.minecraft.command.commands;
+package me.infinity.minecraft.command.commands;
 
-import infinity.minecraft.command.ICommand;
+import me.infinity.minecraft.command.ICommand;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;

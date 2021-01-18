@@ -1,4 +1,4 @@
-package infinity.minecraft.command;
+package me.infinity.minecraft.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

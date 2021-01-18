@@ -1,6 +1,6 @@
-package infinity.minecraft.command.commands;
+package me.infinity.minecraft.command.commands;
 
-import infinity.minecraft.command.ICommand;
+import me.infinity.minecraft.command.ICommand;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -17,51 +17,46 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GodTridentCommand implements ICommand {
+public class FlyingBowCommand implements ICommand {
     @Override
     public boolean handle(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-
         Player player = (Player) sender;
 
         if (player.getInventory().firstEmpty() == -1) {
             Location loc = player.getLocation();
             World world = player.getWorld();
 
-            world.dropItem(loc, getGodTrident());
+            world.dropItem(loc, getBow());
             player.sendMessage(ChatColor.GOLD + "The Minecraft Gods dropped a gift near you");
 
             return true;
         }
 
-        player.getInventory().addItem(getGodTrident());
+        player.getInventory().addItem(getBow());
         player.sendMessage(ChatColor.GOLD + "The Minecraft Gods gave you a gift");
 
         return true;
     }
 
     @SuppressWarnings("ConstantConditions")
-    private ItemStack getGodTrident() {
-        ItemStack item = new ItemStack(Material.TRIDENT);
-        ItemMeta meta = item.getItemMeta();
+    public ItemStack getBow() {
+        ItemStack bow = new ItemStack(Material.BOW);
 
-        meta.setDisplayName(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Ancient Trident");
+        ItemMeta meta = bow.getItemMeta();
+        meta.setDisplayName(ChatColor.BOLD + "" + ChatColor.GOLD + "Flying Bow");
+        meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
         List<String> lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.translateAlternateColorCodes('&', "&7(Right Click) &a&oSpawn minions"));
-        lore.add(ChatColor.translateAlternateColorCodes('&', "&7(Left Click) &a&oShoot explosives"));
+        lore.add(ChatColor.GREEN + "Shoot the arrow to fly");
         meta.setLore(lore);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        bow.setItemMeta(meta);
 
-        meta.addEnchant(Enchantment.LOYALTY, 10, true);
-        meta.addEnchant(Enchantment.CHANNELING, 1, true);
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
-
-        item.setItemMeta(meta);
-
-        return item;
+        return bow;
     }
 
     @Override
     public String getName() {
-        return "GodTrident";
+        return "flyingBow";
     }
 }

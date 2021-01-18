@@ -1,7 +1,8 @@
-package infinity.minecraft.command.commands;
+package me.infinity.minecraft.command.commands;
 
-import infinity.minecraft.command.ICommand;
+import me.infinity.minecraft.command.ICommand;
 import org.bukkit.ChatColor;
+import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -13,7 +14,10 @@ public class HealCommand implements ICommand {
         Player player = (Player) sender;
         player.setHealth(20);
         player.setFoodLevel(20);
-        sender.sendMessage(ChatColor.RED + "Healed " + sender.getName());
+
+        final Server server = sender.getServer();
+
+        server.broadcastMessage(ChatColor.RED + "Healed " + sender.getName());
 
         return true;
     }

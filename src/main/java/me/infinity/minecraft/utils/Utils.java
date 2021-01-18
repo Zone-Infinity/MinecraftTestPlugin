@@ -1,4 +1,4 @@
-package infinity.minecraft.utils;
+package me.infinity.minecraft.utils;
 
 import java.util.Random;
 

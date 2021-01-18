@@ -54,7 +54,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        infinity.minecraft.Main
+                                        me.infinity.minecraft.Main
                                     </mainClass>
                                 </manifest>
                             </archive>

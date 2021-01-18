@@ -1,6 +1,6 @@
-package infinity.minecraft.command;
+package me.infinity.minecraft.command;
 
-import infinity.minecraft.command.commands.*;
+import me.infinity.minecraft.command.commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +20,11 @@ public class CommandManager {
         addCommand(new LaunchCommand());
         addCommand(new GodBootsCommand());
         addCommand(new GodTridentCommand());
-        addCommand(new AirWalkerCommand());
+        addCommand(new SoulWalkerCommand());
+        addCommand(new AdamAppleCommand());
+        addCommand(new TelePickaxeCommand());
+        addCommand(new FlyingBowCommand());
+        addCommand(new SwitchBallCommand());
     }
 
     private void addCommand(ICommand cmd) {
@@ -47,7 +51,7 @@ public class CommandManager {
     }
 
     public boolean handle(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        ICommand cmd = this.getCommand(label);
+        ICommand cmd = this.getCommand(label.replaceFirst("testplugin:", ""));
 
         if (cmd != null) {
             return cmd.handle(sender, command, label, args);

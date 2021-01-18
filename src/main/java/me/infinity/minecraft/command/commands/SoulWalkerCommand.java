@@ -1,6 +1,6 @@
-package infinity.minecraft.command.commands;
+package me.infinity.minecraft.command.commands;
 
-import infinity.minecraft.command.ICommand;
+import me.infinity.minecraft.command.ICommand;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AirWalkerCommand implements ICommand {
+public class SoulWalkerCommand implements ICommand {
     @Override
     public boolean handle(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         Player player = (Player) sender;
@@ -24,13 +24,13 @@ public class AirWalkerCommand implements ICommand {
             World world = player.getWorld();
 
             world.dropItem(loc, getAirWalkers());
-            player.sendMessage(ChatColor.AQUA + "Dropped a AirWalker near you");
+            player.sendMessage(ChatColor.AQUA + "Dropped a SoulWalker near you");
 
             return true;
         }
 
         player.getInventory().addItem(getAirWalkers());
-        player.sendMessage(ChatColor.AQUA + "Gave a AirWalker to you");
+        player.sendMessage(ChatColor.AQUA + "Gave a SoulWalker to you");
 
         return true;
     }
@@ -41,7 +41,7 @@ public class AirWalkerCommand implements ICommand {
 
         LeatherArmorMeta meta = (LeatherArmorMeta) airWalkers.getItemMeta();
 
-        meta.setDisplayName(ChatColor.AQUA + "" + ChatColor.BOLD + "Air Walker");
+        meta.setDisplayName(ChatColor.AQUA + "" + ChatColor.BOLD + "Soul Walker");
         meta.setColor(Color.AQUA);
 
         meta.addEnchant(Enchantment.SOUL_SPEED, 2, true);
@@ -66,6 +66,6 @@ public class AirWalkerCommand implements ICommand {
 
     @Override
     public String getName() {
-        return "airWalker";
+        return "soulWalker";
     }
 }

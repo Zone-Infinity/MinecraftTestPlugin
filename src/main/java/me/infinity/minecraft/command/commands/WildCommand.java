@@ -1,7 +1,7 @@
-package infinity.minecraft.command.commands;
+package me.infinity.minecraft.command.commands;
 
-import infinity.minecraft.command.ICommand;
-import infinity.minecraft.utils.Utils;
+import me.infinity.minecraft.command.ICommand;
+import me.infinity.minecraft.utils.Utils;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
